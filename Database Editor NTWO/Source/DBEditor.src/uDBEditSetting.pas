@@ -84,6 +84,7 @@ begin
     MapDefView            := INIFReadString(IniF, c_appsetting, 'MapDefView', '');
     MapGSTGame            := INIFReadString(IniF, c_appsetting, 'MapGSTGame', '');
     MapDefGame            := INIFReadString(IniF, c_appsetting, 'MapDefGame', '');
+    RootRecordPath        := INIFReadString(IniF, c_appsetting, 'rootrecordpath', 'C:\T3RecordPath');
   end;
   finally
     IniF.DisposeOf

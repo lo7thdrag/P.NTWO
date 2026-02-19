@@ -593,7 +593,7 @@ begin
   if aList = nil then
       Exit;
 
-  if FindFirst(Path + '\*' + '.dsnp', faAnyFile, SR) = 0 then
+  if FindFirst(Path + '\*' + '.dsnap', faAnyFile, SR) = 0 then
   repeat
     snInfo := TSnapshoot_Definition.Create;
     snInfo.FData.Snapshot_Name := sr.Name;
