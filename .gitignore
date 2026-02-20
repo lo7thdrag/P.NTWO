@@ -1,2 +1,4 @@
 *.bak
 *.dcu
+/Database Editor NTWO/Source/LibTTT/forms/User Interface/Utility/Platform/__history
+/Database Editor NTWO/Source/LibTTT/forms/__history
