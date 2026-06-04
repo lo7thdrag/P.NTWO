@@ -34,6 +34,7 @@ type
     procedure btnUsageClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure edtbaselistKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 //    procedure edtbaselistChange(Sender: TObject);
 
   private
@@ -50,7 +51,7 @@ var
 implementation
 
 uses
-  uDataModuleTTT, ufrmSummaryBase, ufrmUsage;
+  uDataModuleTTT, ufrmSummaryBase, ufrmUsage, uSimContainers;
 
 {$R *.dfm}
 
@@ -59,6 +60,11 @@ uses
 procedure TfrmAvailableBase.FormCreate(Sender: TObject);
 begin
   FBaseList := TList.Create;
+end;
+
+procedure TfrmAvailableBase.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FBaseList);
 end;
 
 procedure TfrmAvailableBase.FormShow(Sender: TObject);

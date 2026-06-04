@@ -37,6 +37,7 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure ImgBtnBackClick(Sender: TObject);
     procedure edtCheatKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
 
   private
@@ -68,13 +69,17 @@ end;
 
 procedure TfrmAvailableSonobuoy.FormClose(Sender: TObject;var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FSonobuoyList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableSonobuoy.FormCreate(Sender: TObject);
 begin
   FSonobuoyList := TList.Create;
+end;
+
+procedure TfrmAvailableSonobuoy.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FSonobuoyList);
 end;
 
 procedure TfrmAvailableSonobuoy.FormShow(Sender: TObject);

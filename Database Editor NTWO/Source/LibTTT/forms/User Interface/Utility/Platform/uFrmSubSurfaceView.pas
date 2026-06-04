@@ -403,6 +403,8 @@ type
     procedure UpdateCbbTypeItems;
     procedure btnAssetClick(Sender: TObject);
     procedure edtCheatKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
+    procedure btnAssetRadarClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -453,6 +455,25 @@ begin
   end;
 end;
 
+procedure TfrmSubSurfaceView.btnAssetRadarClick(Sender: TObject);
+begin
+  if Assigned (FSelectedSubSurfaceVehicle) then
+  begin
+    frmAssetDetail := TfrmAssetDetail.Create(Self);
+    try
+      with frmAssetDetail do
+      begin
+        SelectedVehicle := FSelectedSubSurfaceVehicle;
+        ButtonTag := TButton(Sender).Tag;
+        ShowModal;
+      end;
+
+    finally
+      frmAssetDetail.Free;
+    end;
+  end;
+end;
+
 procedure TfrmSubSurfaceView.edtCheatKeyPress(Sender: TObject; var Key: Char);
 var
   i : Integer;
@@ -474,14 +495,17 @@ end;
 
 procedure TfrmSubSurfaceView.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FSubSurfaceVehicleList);
-
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmSubSurfaceView.FormCreate(Sender: TObject);
 begin
   FSubSurfaceVehicleList := TList.Create;
+end;
+
+procedure TfrmSubSurfaceView.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FSubSurfaceVehicleList);
 end;
 
 procedure TfrmSubSurfaceView.FormShow(Sender: TObject);

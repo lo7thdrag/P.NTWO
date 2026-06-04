@@ -35,6 +35,7 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure edtbomblistKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FUpdateList : Boolean;
@@ -59,13 +60,17 @@ uses
 
 procedure TfrmAvailableBomb.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FBombList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableBomb.FormCreate(Sender: TObject);
 begin
   FBombList := TList.Create;
+end;
+
+procedure TfrmAvailableBomb.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FBombList);
 end;
 
 procedure TfrmAvailableBomb.FormShow(Sender: TObject);

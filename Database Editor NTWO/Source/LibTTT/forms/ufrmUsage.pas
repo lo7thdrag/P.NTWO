@@ -20,6 +20,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnOkClick(Sender: TObject);
     procedure btnPrintClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
 
@@ -47,7 +48,7 @@ uses
   uDataModuleTTT, uDBAsset_Countermeasure, uDBAsset_Radar, uDBAsset_Sonar, newClassASTT,
   uDBAsset_Sensor, uDBAsset_Sonobuoy, uDBAsset_Weapon, Printers,
   uDBAsset_Runtime_Platform_Library, uDBPattern, uDBAsset_GameEnvironment,
-  uDBAsset_Vehicle, uDBAsset_Logistics,uDBAsset_Transport, uDBAsset_Base, uDBGame_Defaults; //dng
+  uDBAsset_Vehicle, uDBAsset_Logistics,uDBAsset_Transport, uDBAsset_Base, uDBGame_Defaults, uSimContainers; //dng
 
 procedure TfrmUsage.btnOkClick(Sender: TObject);
 begin
@@ -208,6 +209,14 @@ begin
   uList2 := TList.Create;
   uList3 := TList.Create;
   uList4 := TList.Create;
+end;
+
+procedure TfrmUsage.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(uList1);
+  FreeItemsAndFreeList(uList2);
+  FreeItemsAndFreeList(uList3);
+  FreeItemsAndFreeList(uList4);
 end;
 
 procedure TfrmUsage.FormShow(Sender: TObject);

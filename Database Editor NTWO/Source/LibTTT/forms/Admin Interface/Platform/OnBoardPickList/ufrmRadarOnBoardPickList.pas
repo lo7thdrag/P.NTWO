@@ -32,6 +32,7 @@ type
     procedure btnRemoveClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FAllRadarDefList : TList;
@@ -62,9 +63,7 @@ uses
 
 procedure TfrmRadarOnBoardPickList.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FAllRadarDefList);
-  FreeItemsAndFreeList(FAllRadarOnBoardList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmRadarOnBoardPickList.FormCreate(Sender: TObject);
@@ -73,6 +72,12 @@ begin
   FAllRadarOnBoardList := TList.Create;
 
   AfterClose := False;
+end;
+
+procedure TfrmRadarOnBoardPickList.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FAllRadarDefList);
+  FreeItemsAndFreeList(FAllRadarOnBoardList);
 end;
 
 procedure TfrmRadarOnBoardPickList.FormShow(Sender: TObject);

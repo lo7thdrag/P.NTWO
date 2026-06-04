@@ -404,6 +404,7 @@ type
     procedure cbbTypeChange(Sender: TObject);
     procedure cbbFontTypeChange(Sender: TObject);
     procedure chkSonobuoyCapableClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FSelectedVehicle : TVehicle_Definition;
@@ -466,16 +467,20 @@ uses
 
 procedure TfrmSummaryVehicle.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FPlatInstList);
 //  FreeItemsAndFreeList(iList);
 //  FreeItemsAndFreeList(PIList);
 //  FreeItemsAndFreeList(embarkedList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmSummaryVehicle.FormCreate(Sender: TObject);
 begin
   FPlatInstList := TList.Create;
+end;
+
+procedure TfrmSummaryVehicle.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FPlatInstList);
 end;
 
 procedure TfrmSummaryVehicle.FormShow(Sender: TObject);

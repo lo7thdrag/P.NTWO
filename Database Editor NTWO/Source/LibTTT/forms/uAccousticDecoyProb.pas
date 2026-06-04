@@ -71,6 +71,7 @@ type
     procedure edtWakeHoming2KeyPress(Sender: TObject; var Key: Char);
     procedure edtWakeHoming3KeyPress(Sender: TObject; var Key: Char);
     procedure edtWakeHoming4KeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
     BlindZone : TBlind_Zone;
@@ -92,7 +93,7 @@ implementation
 
 {$R *.dfm}
 
-uses uDataModuleTTT, ufrmSummaryAcousticDecoy;
+uses uDataModuleTTT, ufrmSummaryAcousticDecoy, uSimContainers;
 
 procedure TAccousticDecoyProb.btnApplyClick(Sender: TObject);
 begin
@@ -397,6 +398,11 @@ procedure TAccousticDecoyProb.FormCreate(Sender: TObject);
 begin
   bList := TList.Create;
   acc := TAcoustic_Decoy_POH_Modifier.Create;
+end;
+
+procedure TAccousticDecoyProb.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(bList);
 end;
 
 procedure TAccousticDecoyProb.FormShow(Sender: TObject);

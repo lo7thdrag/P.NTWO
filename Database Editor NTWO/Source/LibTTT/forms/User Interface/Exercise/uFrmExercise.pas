@@ -504,7 +504,6 @@ end;
 
 procedure TfrmExercise.btnNewClick(Sender: TObject);
 begin
-
   frmSummaryScenario := TfrmSummaryScenario.Create(Self);
   try
     with frmSummaryScenario do
@@ -515,6 +514,12 @@ begin
       SelectedGameArea := TGame_Area_Definition.Create;
       SelectedAssetDeployment := TAsset_Deployment.Create;
       ShowModal;
+
+      SelectedScenario.Free;
+      SelectedResourceAllocation.Free;
+      SelectedEnvironment.Free;
+      SelectedGameArea.Free;
+      SelectedAssetDeployment.Free;
     end;
   finally
     frmSummaryScenario.Free;

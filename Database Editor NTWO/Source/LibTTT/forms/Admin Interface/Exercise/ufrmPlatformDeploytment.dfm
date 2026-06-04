@@ -44546,6 +44546,10 @@ object frmPlatformDeploytment: TfrmPlatformDeploytment
         TabWidth = 75
         object TabSheet1: TTabSheet
           Caption = 'Initialize'
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Label5: TLabel
             Left = 17
             Top = 25
@@ -44753,6 +44757,10 @@ object frmPlatformDeploytment: TfrmPlatformDeploytment
         object TabSheet2: TTabSheet
           Caption = 'Logistic'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Label15: TLabel
             Left = 99
             Top = 52
@@ -45028,6 +45036,10 @@ object frmPlatformDeploytment: TfrmPlatformDeploytment
         object TabSheet3: TTabSheet
           Caption = 'Transport'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object lvTransport: TListView
             Left = 0
             Top = 0
@@ -45195,6 +45207,10 @@ object frmPlatformDeploytment: TfrmPlatformDeploytment
       TabWidth = 75
       object tsPlatforms: TTabSheet
         Caption = 'Platforms'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object lvPlatform: TListView
           Left = 0
           Top = 0
@@ -45235,6 +45251,10 @@ object frmPlatformDeploytment: TfrmPlatformDeploytment
       object tsBases: TTabSheet
         Caption = 'Bases'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object lvBase: TListView
           Left = 0
           Top = 0
@@ -45271,6 +45291,10 @@ object frmPlatformDeploytment: TfrmPlatformDeploytment
       object tsOverlays: TTabSheet
         Caption = 'Overlays'
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object lvOverlay: TListView
           Left = 0
           Top = 0

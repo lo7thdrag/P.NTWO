@@ -54,6 +54,7 @@ type
     procedure btnOKClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnApplyClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
 
   private
@@ -91,8 +92,7 @@ uses
 
 procedure TfrmESMMount.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FBlindZoneView.Free;
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmESMMount.FormCreate(Sender: TObject);
@@ -108,6 +108,11 @@ begin
     Width := pnlBlindZone.Width;
     OnClick := pnlBlindZoneClick;
   end;
+end;
+
+procedure TfrmESMMount.FormDestroy(Sender: TObject);
+begin
+  FBlindZoneView.Free;
 end;
 
 procedure TfrmESMMount.FormShow(Sender: TObject);

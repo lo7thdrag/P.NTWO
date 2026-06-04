@@ -18,6 +18,7 @@ object frmSummaryVehicle: TfrmSummaryVehicle
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -31756,17 +31757,13 @@ object frmSummaryVehicle: TfrmSummaryVehicle
       Top = 0
       Width = 881
       Height = 411
-      ActivePage = tsPeriscope
+      ActivePage = tsAssets
       Align = alClient
       TabHeight = 30
       TabOrder = 0
       TabWidth = 100
       object tsGeneral: TTabSheet
         Caption = 'General'
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object lbl3: TLabel
           Left = 19
           Top = 217
@@ -32413,10 +32410,6 @@ object frmSummaryVehicle: TfrmSummaryVehicle
       object tsModel: TTabSheet
         Caption = 'Model'
         ImageIndex = 7
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object lbl23: TLabel
           Left = 19
           Top = 21
@@ -97421,10 +97414,6 @@ object frmSummaryVehicle: TfrmSummaryVehicle
       object tsPhysical: TTabSheet
         Caption = 'Physical'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object lblMotionCharacteristic: TLabel
           Left = 18
           Top = 20
@@ -98125,10 +98114,6 @@ object frmSummaryVehicle: TfrmSummaryVehicle
       object tsCharacteristic: TTabSheet
         Caption = 'Characteristic'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object grbAirDropLimitation: TGroupBox
           Left = 22
           Top = 26
@@ -98376,10 +98361,6 @@ object frmSummaryVehicle: TfrmSummaryVehicle
       object tsPOH: TTabSheet
         Caption = 'POH Modifier'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object grbMissile: TGroupBox
           Left = 20
           Top = 10
@@ -98839,10 +98820,6 @@ object frmSummaryVehicle: TfrmSummaryVehicle
       object tsAssets: TTabSheet
         Caption = 'Assets'
         ImageIndex = 4
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object btnDefaultLogistics: TSpeedButton
           Left = 826
           Top = 39
@@ -99453,10 +99430,6 @@ object frmSummaryVehicle: TfrmSummaryVehicle
         BorderWidth = 10
         Caption = 'Notes'
         ImageIndex = 6
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object mmoNotes: TMemo
           Left = 0
           Top = 0

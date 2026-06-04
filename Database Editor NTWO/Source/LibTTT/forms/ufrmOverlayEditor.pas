@@ -551,6 +551,7 @@ type
     procedure btnoutClick(Sender: TObject);
     procedure btngameareaClick(Sender: TObject);
     procedure btnrulerClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 //        procedure TfrmWaypointEditor.OnAddRuller(Long, Lat: double);
   private
     FSelectedPolyID: Integer;
@@ -704,6 +705,16 @@ begin
   DrawFlagPoint.Converter := FConverter;
 
   btnOk.Enabled := false;
+end;
+
+procedure TOverlayEditorForm.FormDestroy(Sender: TObject);
+begin
+  FCanvas.Free;
+  FConverter.Free;
+  FFormula.Free;
+
+  DrawOverlay.Free;
+  DrawFlagPoint.Free;
 end;
 
 procedure TOverlayEditorForm.FormResize(Sender: TObject);

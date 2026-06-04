@@ -64,6 +64,7 @@ type
     procedure edtAspectMaxKeyPress(Sender: TObject; var Key: Char);
     procedure edtProbabilityMinKeyPress(Sender: TObject; var Key: Char);
     procedure edtProbabilityMaxKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
   private
 //    FProbabilityGraph : E_ProbabilityGraph;
@@ -102,7 +103,7 @@ var
 implementation
 
 uses
-  uDataModuleTTT ;
+  uDataModuleTTT, uSimContainers;
 
 {$R *.dfm}
 
@@ -113,6 +114,12 @@ procedure TfrmAcousticDecoyPOHGraphic.FormCreate(Sender: TObject);
 begin
   FProbabilityPointList := TList.Create;
   FDeletedProbabilityPointList := TList.Create;
+end;
+
+procedure TfrmAcousticDecoyPOHGraphic.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FProbabilityPointList);
+  FreeItemsAndFreeList(FDeletedProbabilityPointList);
 end;
 
 procedure TfrmAcousticDecoyPOHGraphic.FormShow(Sender: TObject);

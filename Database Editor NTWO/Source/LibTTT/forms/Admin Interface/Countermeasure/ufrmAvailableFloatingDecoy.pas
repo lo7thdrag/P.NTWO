@@ -35,6 +35,7 @@ type
     procedure btnUsageClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure edtfloatingdecoyKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
 
   private
@@ -60,13 +61,17 @@ uses
 
 procedure TfrmAvailableFloatingDecoy.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FFloatingDecoyList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableFloatingDecoy.FormCreate(Sender: TObject);
 begin
   FFloatingDecoyList := TList.Create;
+end;
+
+procedure TfrmAvailableFloatingDecoy.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FFloatingDecoyList);
 end;
 
 procedure TfrmAvailableFloatingDecoy.FormShow(Sender: TObject);

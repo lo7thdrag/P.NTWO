@@ -53,6 +53,7 @@ type
     procedure btnOKClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnApplyClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FSelectedVehicle : TVehicle_Definition;
@@ -88,8 +89,7 @@ uses
 
 procedure TfrmSonarMount.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FBlindZoneView.Free;
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmSonarMount.FormCreate(Sender: TObject);
@@ -105,6 +105,11 @@ begin
     Width := pnlBlindZone.Width;
     OnClick := pnlBlindZoneClick;
   end;
+end;
+
+procedure TfrmSonarMount.FormDestroy(Sender: TObject);
+begin
+  FBlindZoneView.Free;
 end;
 
 procedure TfrmSonarMount.FormShow(Sender: TObject);

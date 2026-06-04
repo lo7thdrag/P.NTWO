@@ -31807,10 +31807,6 @@ object frmSummarySonar: TfrmSummarySonar
       StyleElements = [seFont, seClient]
       object tsGeneral: TTabSheet
         Caption = 'General'
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object grpActiveDetectionCapabilities: TGroupBox
           Left = 15
           Top = 71
@@ -32494,10 +32490,6 @@ object frmSummarySonar: TfrmSummarySonar
       object tsTowedArray: TTabSheet
         Caption = 'Towed Array'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object lblMinTowSpeed: TLabel
           Left = 31
           Top = 121
@@ -32676,10 +32668,6 @@ object frmSummarySonar: TfrmSummarySonar
         BorderWidth = 10
         Caption = 'Notes'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object mmoNotes: TMemo
           Left = 0
           Top = 0

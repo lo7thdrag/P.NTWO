@@ -36,6 +36,7 @@ type
     procedure btnUsageClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure edtmotionlistKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
 
   private
@@ -52,7 +53,7 @@ var
 implementation
 
 uses
-  uDataModuleTTT, ufrmSummaryMotion, ufrmUsage;
+  uDataModuleTTT, ufrmSummaryMotion, ufrmUsage, uSimContainers;
 
 {$R *.dfm}
 
@@ -65,12 +66,17 @@ end;
 
 procedure TfrmAvailablemotion.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableMotion.FormCreate(Sender: TObject);
 begin
   FMotionList := TList.Create;
+end;
+
+procedure TfrmAvailablemotion.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FMotionList);
 end;
 
 procedure TfrmAvailableMotion.FormShow(Sender: TObject);

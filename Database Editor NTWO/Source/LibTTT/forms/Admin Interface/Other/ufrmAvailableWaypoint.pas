@@ -35,6 +35,7 @@ type
     procedure btnUsageClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure edtwaypointlistKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FUpdateList : Boolean;
@@ -52,18 +53,23 @@ implementation
 {$R *.dfm}
 
 uses
-  uDataModuleTTT, ufrmSummaryWaypoint, ufrmUsage;
+  uDataModuleTTT, ufrmSummaryWaypoint, ufrmUsage, uSimContainers;
 
 {$REGION ' Form Handle '}
 
 procedure TfrmAvailableWaypoint.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableWaypoint.FormCreate(Sender: TObject);
 begin
   FWaypointList := TList.Create;
+end;
+
+procedure TfrmAvailableWaypoint.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FWaypointList);
 end;
 
 procedure TfrmAvailableWaypoint.FormShow(Sender: TObject);

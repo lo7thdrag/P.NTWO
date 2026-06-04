@@ -18,6 +18,7 @@ type
     procedure ImgBtnBackClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
       FRuntimePlatformLibraryList : TList;
   public
@@ -30,7 +31,7 @@ var
 implementation
 
  uses
-  uDataModuleTTT;
+  uDataModuleTTT, uSimContainers;
 
 {$R *.dfm}
 
@@ -40,12 +41,17 @@ implementation
 
 procedure TfrmRPLView.FormCreate(Sender: TObject);
 begin
- FRuntimePlatformLibraryList := TList.Create;
+  FRuntimePlatformLibraryList := TList.Create;
+end;
+
+procedure TfrmRPLView.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FRuntimePlatformLibraryList);
 end;
 
 procedure TfrmRPLView.FormShow(Sender: TObject);
 begin
-UpdateRPLList;
+  UpdateRPLList;
 end;
 
 procedure TfrmRPLView.ImgBtnBackClick(Sender: TObject);

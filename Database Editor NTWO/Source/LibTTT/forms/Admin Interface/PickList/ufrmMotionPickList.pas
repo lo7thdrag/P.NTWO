@@ -23,6 +23,7 @@ type
     procedure lstAvailableMotionClick(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FSelectedMotionId : Integer;
@@ -42,31 +43,35 @@ var
 implementation
 
 uses
-  uDataModuleTTT;
+  uDataModuleTTT, uSimContainers;
 
 {$R *.dfm}
 
 {$REGION ' Form Handle '}
 
 procedure TfrmMotionPickList.FormClose(Sender: TObject; var Action: TCloseAction);
-var
-  i : Integer;
+//var
+//  i : Integer;
 
 begin
-
-  for i := FMotionList.Count - 1 downto 0 do
-  begin
-    TMotion_Characteristics(FMotionList[i]).Free
-  end;
-  FMotionList.Clear;
-  FMotionList.Free;
-
-  Action := cafree;
+//  for i := FMotionList.Count - 1 downto 0 do
+//  begin
+//    TMotion_Characteristics(FMotionList[i]).Free
+//  end;
+//  FMotionList.Clear;
+//  FMotionList.Free;
+//
+//  Action := cafree;
 end;
 
 procedure TfrmMotionPickList.FormCreate(Sender: TObject);
 begin
   FMotionList := TList.Create;
+end;
+
+procedure TfrmMotionPickList.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FMotionList);
 end;
 
 procedure TfrmMotionPickList.FormShow(Sender: TObject);

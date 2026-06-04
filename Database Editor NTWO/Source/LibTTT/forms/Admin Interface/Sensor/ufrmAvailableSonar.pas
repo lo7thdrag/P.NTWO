@@ -36,6 +36,7 @@ type
 
     procedure btnCloseClick(Sender: TObject);
     procedure edtCheatKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
 
   private
@@ -61,13 +62,17 @@ uses
 
 procedure TfrmAvailableSonar.FormClose(Sender: TObject;  var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FSonarList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableSonar.FormCreate(Sender: TObject);
 begin
   FSonarList := TList.Create;
+end;
+
+procedure TfrmAvailableSonar.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FSonarList);
 end;
 
 procedure TfrmAvailableSonar.FormShow(Sender: TObject);

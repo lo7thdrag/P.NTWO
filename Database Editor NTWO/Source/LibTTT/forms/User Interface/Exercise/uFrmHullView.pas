@@ -34,7 +34,6 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure imgGraphMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure lvTransportClick(Sender: TObject);
@@ -42,6 +41,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FDeployment : TAsset_Deployment;
@@ -160,16 +160,16 @@ begin
   end;
 end;
 
-procedure TfrmHullView.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  FreeItemsAndFreeList(FShapeList);
-  FreeItemsAndFreeList(FAllVehicleOnBoardList);
-end;
-
 procedure TfrmHullView.FormCreate(Sender: TObject);
 begin
   FShapeList := TList.Create;
   FAllVehicleOnBoardList := TList.Create;
+end;
+
+procedure TfrmHullView.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FShapeList);
+  FreeItemsAndFreeList(FAllVehicleOnBoardList);
 end;
 
 procedure TfrmHullView.FormShow(Sender: TObject);

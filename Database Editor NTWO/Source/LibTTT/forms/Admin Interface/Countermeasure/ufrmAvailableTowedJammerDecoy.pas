@@ -35,6 +35,7 @@ type
     procedure btnUsageClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure edttowedjammerdecoyKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
 
 
@@ -61,13 +62,17 @@ uses
 
 procedure TfrmAvailableTowedJammerDecoy.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FTowedJammerDecoyList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableTowedJammerDecoy.FormCreate(Sender: TObject);
 begin
   FTowedJammerDecoyList := TList.Create;
+end;
+
+procedure TfrmAvailableTowedJammerDecoy.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FTowedJammerDecoyList);
 end;
 
 procedure TfrmAvailableTowedJammerDecoy.FormShow(Sender: TObject);

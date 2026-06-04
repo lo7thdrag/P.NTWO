@@ -37,6 +37,7 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure CheatClick(Sender: TObject);
     procedure edtCheatKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FUpdateList : Boolean;
@@ -62,13 +63,17 @@ uses
 
 procedure TfrmAvailableGun.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FGunList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableGun.FormCreate(Sender: TObject);
 begin
   FGunList := TList.Create;
+end;
+
+procedure TfrmAvailableGun.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FGunList);
 end;
 
 procedure TfrmAvailableGun.FormShow(Sender: TObject);

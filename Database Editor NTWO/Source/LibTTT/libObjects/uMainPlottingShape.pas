@@ -181,7 +181,7 @@ end;
 
 destructor TMainPlottingShape.destroy;
 begin
-
+  FTempHuruf.Free;
 end;
 
 procedure TMainPlottingShape.Draw(FCanvas: TCanvas);

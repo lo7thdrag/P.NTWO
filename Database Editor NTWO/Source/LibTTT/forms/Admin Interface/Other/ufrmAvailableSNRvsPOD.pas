@@ -36,6 +36,7 @@ type
 
     procedure btnCloseClick(Sender: TObject);
     procedure edtsnrpodlistKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FUpdateList : Boolean;
@@ -59,13 +60,17 @@ uses
 
 procedure TfrmAvailableSNRvsPOD.FormClose(Sender: TObject;var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FSNRvsPODList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableSNRvsPOD.FormCreate(Sender: TObject);
 begin
   FSNRvsPODList := TList.Create;
+end;
+
+procedure TfrmAvailableSNRvsPOD.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FSNRvsPODList);
 end;
 
 procedure TfrmAvailableSNRvsPOD.FormShow(Sender: TObject);

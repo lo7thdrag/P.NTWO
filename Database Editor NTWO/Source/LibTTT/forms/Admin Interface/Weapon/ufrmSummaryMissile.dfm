@@ -31809,10 +31809,6 @@ object frmSummaryMissile: TfrmSummaryMissile
         Caption = 'General'
         DoubleBuffered = True
         ParentDoubleBuffered = False
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object lblDetectabilityType: TLabel
           Left = 418
           Top = 92
@@ -32215,10 +32211,6 @@ object frmSummaryMissile: TfrmSummaryMissile
       object tsPhysical: TTabSheet
         Caption = 'Physical'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object lblMotionCharacteristic: TLabel
           Left = 18
           Top = 20
@@ -32630,10 +32622,6 @@ object frmSummaryMissile: TfrmSummaryMissile
       object tsPOHModifier: TTabSheet
         Caption = 'POH Modifier'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object grbMissile: TGroupBox
           Left = 24
           Top = 20
@@ -32817,10 +32805,6 @@ object frmSummaryMissile: TfrmSummaryMissile
       object tsGuidance: TTabSheet
         Caption = 'Guidance'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Label76: TLabel
           Left = 8
           Top = 10

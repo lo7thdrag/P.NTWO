@@ -1017,7 +1017,7 @@ begin
         j := j+1;
       end;
     end;
-
+    FreeItemsAndFreeList(tempList);
     {$ENDREGION}
 
   end;

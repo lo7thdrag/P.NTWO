@@ -65,6 +65,7 @@ type
     procedure ImgBtnNextTabClick(Sender: TObject);
     procedure ImgBtnPreviousTabClick(Sender: TObject);
     procedure edtCheatKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
   private
     tabIndex, tabMax : Integer;
@@ -111,13 +112,17 @@ end;
 
 procedure TfrmSonobuoyView.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FSonobuoyList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmSonobuoyView.FormCreate(Sender: TObject);
 begin
  FSonobuoyList := TList.Create;
+end;
+
+procedure TfrmSonobuoyView.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FSonobuoyList);
 end;
 
 procedure TfrmSonobuoyView.FormShow(Sender: TObject);

@@ -5,7 +5,8 @@ interface
 uses
   MapXLib_TLB,Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Tabs, DockTabSet, OleCtrls,  ExtCtrls, //RzForms,
-  ImgList, StdCtrls, ComCtrls, ToolWin,  uMapXHandler, uCoordConvertor;
+  ImgList, StdCtrls, ComCtrls, ToolWin,  uMapXHandler, uCoordConvertor,
+  System.ImageList;
 
 type
   TfLandmassEditor = class(TForm)

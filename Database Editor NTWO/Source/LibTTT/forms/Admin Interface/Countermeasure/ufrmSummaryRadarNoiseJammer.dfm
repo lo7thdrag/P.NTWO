@@ -31798,7 +31798,7 @@ object frmSummaryRadarNoiseJammer: TfrmSummaryRadarNoiseJammer
       Top = 0
       Width = 375
       Height = 279
-      ActivePage = tsGeneral
+      ActivePage = tsNotes
       Align = alClient
       TabHeight = 30
       TabOrder = 0
@@ -32019,10 +32019,6 @@ object frmSummaryRadarNoiseJammer: TfrmSummaryRadarNoiseJammer
         BorderWidth = 10
         Caption = 'Notes'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object mmoNotes: TMemo
           Left = 0
           Top = 0

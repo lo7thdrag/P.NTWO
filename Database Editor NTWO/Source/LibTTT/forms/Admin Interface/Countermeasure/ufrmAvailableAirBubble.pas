@@ -35,6 +35,7 @@ type
     procedure btnUsageClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure edtairbubbleKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
 
   private
@@ -60,13 +61,17 @@ uses
 
 procedure TfrmAvailableAirBubble.FormClose(Sender: TObject;var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FAirBubbleList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableAirBubble.FormCreate(Sender: TObject);
 begin
   FAirBubbleList := TList.Create;
+end;
+
+procedure TfrmAvailableAirBubble.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FAirBubbleList);
 end;
 
 procedure TfrmAvailableAirBubble.FormShow(Sender: TObject);

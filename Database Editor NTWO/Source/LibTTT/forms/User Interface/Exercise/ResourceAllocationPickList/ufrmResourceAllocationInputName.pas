@@ -54,7 +54,7 @@ var
 implementation
 
 uses
-  uDataModuleTTT ;
+  uDataModuleTTT, uSimContainers;
 
 {$R *.dfm}
 
@@ -162,7 +162,7 @@ begin
 
   cbbNameChange(nil);
 
-  piIdentList.Free;
+  FreeItemsAndFreeList(piIdentList);
 end;
 
 function TfrmResourceAllocationInputName.CekInput: Boolean;

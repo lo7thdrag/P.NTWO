@@ -31748,7 +31748,7 @@ object frmSummaryGameDefault: TfrmSummaryGameDefault
       Top = 0
       Width = 806
       Height = 456
-      ActivePage = tsCommunication
+      ActivePage = tsAllocatioinMax
       Align = alClient
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText

@@ -84,6 +84,7 @@ type
     procedure edtRangeMaxKeyPress(Sender: TObject; var Key: Char);
     procedure edtElevationMinKeyPress(Sender: TObject; var Key: Char);
     procedure edtElevationMaxKeyPress(Sender: TObject; var Key: Char);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FSelectedRadar : TRadar_On_Board;
@@ -131,7 +132,7 @@ var
 implementation
 
 uses
-  uDataModuleTTT ;
+  uDataModuleTTT, uSimContainers;
 
 {$R *.dfm}
 
@@ -142,6 +143,12 @@ procedure TfrmRadarCoverageGraphic.FormCreate(Sender: TObject);
 begin
   FVerticalCoverageList := TList.Create;
   FDeletedVerticalCoverageList := TList.Create;
+end;
+
+procedure TfrmRadarCoverageGraphic.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FVerticalCoverageList);
+  FreeItemsAndFreeList(FDeletedVerticalCoverageList);
 end;
 
 procedure TfrmRadarCoverageGraphic.FormShow(Sender: TObject);

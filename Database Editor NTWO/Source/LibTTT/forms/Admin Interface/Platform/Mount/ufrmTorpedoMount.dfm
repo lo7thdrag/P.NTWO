@@ -18,6 +18,7 @@ object frmTorpedoMount: TfrmTorpedoMount
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -30320,7 +30321,7 @@ object frmTorpedoMount: TfrmTorpedoMount
     Left = 48
     Top = 101
     Width = 400
-    Height = 24
+    Height = 21
     Enabled = False
     TabOrder = 4
   end

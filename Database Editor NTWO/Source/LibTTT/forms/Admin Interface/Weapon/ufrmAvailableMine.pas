@@ -38,6 +38,7 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure edtCheatKeyPress(Sender: TObject; var Key: Char);
     procedure ImgBackgroundClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FUpdateList : Boolean;
@@ -63,13 +64,17 @@ uses
 
 procedure TfrmAvailableMine.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FreeItemsAndFreeList(FMineList);
-  Action := cafree;
+//  Action := cafree;
 end;
 
 procedure TfrmAvailableMine.FormCreate(Sender: TObject);
 begin
   FMineList := TList.Create;
+end;
+
+procedure TfrmAvailableMine.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FMineList);
 end;
 
 procedure TfrmAvailableMine.FormShow(Sender: TObject);

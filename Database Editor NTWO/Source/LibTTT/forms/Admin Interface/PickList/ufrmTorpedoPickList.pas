@@ -23,6 +23,7 @@ type
     procedure lstAvailableTorpedoClick(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FTorpedoList : TList;
@@ -43,7 +44,7 @@ var
 implementation
 
 uses
-  uDataModuleTTT;
+  uDataModuleTTT, uSimContainers;
 {$R *.dfm}
 
 {$REGION ' Form Handle '}
@@ -67,6 +68,11 @@ end;
 procedure TfrmTorpedoPickList.FormCreate(Sender: TObject);
 begin
   FTorpedoList := TList.Create;
+end;
+
+procedure TfrmTorpedoPickList.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FTorpedoList);
 end;
 
 procedure TfrmTorpedoPickList.FormShow(Sender: TObject);

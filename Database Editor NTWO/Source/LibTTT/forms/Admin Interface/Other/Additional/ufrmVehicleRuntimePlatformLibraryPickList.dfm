@@ -17,6 +17,7 @@ object frmVehicleRuntimePlatformLibraryPickList: TfrmVehicleRuntimePlatformLibra
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 14
@@ -28238,8 +28239,8 @@ object frmVehicleRuntimePlatformLibraryPickList: TfrmVehicleRuntimePlatformLibra
     object Label2: TLabel
       Left = 16
       Top = 6
-      Width = 152
-      Height = 16
+      Width = 153
+      Height = 18
       Cursor = crHandPoint
       Caption = 'List of Vehicle On RPL'
       Color = clHighlight

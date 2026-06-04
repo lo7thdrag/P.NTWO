@@ -22,6 +22,7 @@ type
     procedure lstAvailableSonarClick(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     FSelectedSonarId : Integer;
@@ -41,7 +42,7 @@ var
 implementation
 
 uses
-  uDataModuleTTT;
+  uDataModuleTTT, uSimContainers;
 
 {$R *.dfm}
 
@@ -50,6 +51,11 @@ uses
 procedure TfrmSonarPickList.FormCreate(Sender: TObject);
 begin
   FSonarList := TList.Create;
+end;
+
+procedure TfrmSonarPickList.FormDestroy(Sender: TObject);
+begin
+  FreeItemsAndFreeList(FSonarList);
 end;
 
 procedure TfrmSonarPickList.FormShow(Sender: TObject);
